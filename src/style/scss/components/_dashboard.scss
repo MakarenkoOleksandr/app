@@ -1,0 +1,232 @@
+.dashboard {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-areas: "dashboard-menu dashboard-content";
+  width: 100vw;
+  justify-items: center;
+  height: 500px;
+  &__menu {
+    display: flex;
+    color: rgb(255, 230, 230);
+    border-right: 2px solid rgb(255, 230, 230);
+    grid-area: dashboard-menu;
+    padding-right: 20px;
+    &-actions {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      gap: 30px;
+      padding: 0;
+    }
+    &-link {
+      color: inherit;
+      text-decoration: none;
+      padding: 0.5em;
+      font-weight: 600;
+      &.active {
+        background-color: rgb(255, 230, 230);
+        border-radius: 20px;
+        color: black;
+        transition: 0.7s;
+      }
+      &:hover {
+        background-color: rgb(255, 230, 230);
+        border-radius: 20px;
+        color: black;
+        transition: 0.7s;
+      }
+    }
+  }
+  &__content {
+    grid-area: dashboard-content;
+  }
+}
+
+.profile {
+  padding: 1em;
+  opacity: 0;
+    transform: translateX(300%);
+  &__action {
+    outline: none;
+    border: none;
+    background-color: rgb(255, 230, 230);
+    color: black;
+    margin-left: 1em;
+    padding: 0.5em;
+    border-radius: 20px;
+    min-width: 100px;
+    &:hover {
+      background-color: black;
+      border-radius: 20px;
+      color: rgb(255, 230, 230);
+      transition: 0.7s;
+    }
+  }
+  &__wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 20px;
+  }
+  &__input {
+    border: none;
+    outline: 2px solid transparent;
+    color: black;
+    padding: 0.5em 2em 0.5em 0.5em;
+  }
+  &.active{
+    opacity: 1;
+    transform: translateX(0%);
+    transition: .7s;
+  }
+  &__add-network {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    &.active {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 99;
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  &__name{
+    &-network {
+      font-weight: 600;
+      font-style: italic;
+      padding-top: 20px;
+    }
+  }
+}
+
+.options {
+  padding: 1em;
+  opacity: 0;
+  transform: translateX(300%);
+  &__menu {
+    color: rgb(255, 230, 230);
+    border: 2px solid rgb(255, 230, 230);
+    border-radius: 20px;
+    padding: 1em;
+    &-actions {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 0;
+    }
+    &-action {
+    }
+    &-link {
+      color: inherit;
+      text-decoration: none;
+      padding: 0.5em;
+      font-weight: 600;
+      &.active {
+        background-color: rgb(255, 230, 230);
+        border-radius: 20px;
+        color: black;
+        transition: 0.7s;
+      }
+      &:hover {
+        background-color: rgb(255, 230, 230);
+        border-radius: 20px;
+        color: black;
+        transition: 0.7s;
+      }
+    }
+  }
+  &.active{
+    opacity: 1;
+    transform: translateX(0%);
+    transition: .7s;
+  }
+  &__check-balance {
+    padding-top: 20px;
+  }
+}
+
+.modal {
+  width: 400px;
+  padding: 1em;
+  border: 2px solid rgb(255, 230, 230);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  &__network {
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+    align-items: center;
+    &-input {
+      padding: 0.5em;
+      border: none;
+      outline: none;
+      color: black;
+    }
+  }
+  &__submit {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    outline: 2px solid rgb(255, 230, 230);
+    border: none;
+    background-color: black;
+    color: rgb(255, 230, 230);
+    &--close {
+      width: 396px;
+    }
+
+    &:hover{      
+      background-color: rgb(255, 230, 230);
+      color: black;
+      transition: .7s;
+    }
+  }
+}
+
+.balance {
+  &__wrap {
+    display: flex;
+    gap: 30px
+  }
+  &__item {
+    min-width: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    font-weight: 600;
+    padding-top: 20px;
+  }
+  &__head {
+    font-weight: normal;
+    font-style: italic;
+    border-bottom: 2px solid rgb(255, 230, 230);
+  }
+  &__action {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    outline: 2px solid rgb(255, 230, 230);
+    border: none;
+    background-color: black;
+    color: rgb(255, 230, 230);
+    &:hover{      
+      background-color: rgb(255, 230, 230);
+      color: black;
+      transition: .7s;
+    }
+  }
+  &__message {
+    text-align: center;
+    font-weight: 600;
+  }
+}

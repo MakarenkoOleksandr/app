@@ -1,0 +1,52 @@
+.header {
+  max-height: 100px;
+  position: absolute;
+  min-width: 100vw;
+  margin: 0 auto;
+  padding: 20px;
+  &__menu {
+    display: flex;
+    justify-content: space-between;
+    &-logo {
+      max-height: 100px;
+      transition: 0.7s;
+      &:hover {
+        opacity: 0.6;
+        transition: 0.7s;
+      }
+    }
+    &-link {
+      padding: 1em;
+      background-color: rgb(255, 230, 230);
+      border-radius: 30px;
+      transition: 0.7s;
+      font-weight: 600;
+      color: black;
+      &.active {
+        background-color: black;
+        color: rgb(255, 230, 230);
+        outline: 2px solid rgb(255, 230, 230);
+        transition: 0.7s;
+      }
+      &:hover {
+        background-color: black;
+        color: rgb(255, 230, 230);
+        outline: 2px solid rgb(255, 230, 230);
+        transition: 0.7s;
+      }
+    }
+    &-img {
+      max-height: 100px;
+      object-fit: cover;
+      border-radius: 100px;
+      border: 2px solid rgb(255, 230, 230);
+    }
+    &-actions {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    &-action {
+    }
+  }
+}

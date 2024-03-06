@@ -1,0 +1,44 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.main {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: rgb(255, 230, 230);
+  animation: fadeIn 1s ease-in-out;
+  &__header {
+    font-size: 40px;
+  }
+  &__content {
+    font-size: 30px;
+    max-width: 650px;
+    text-align: center;
+  }
+  &__form{
+    &-message{
+      font-weight: 600;
+      font-size: 20px;
+      transition: 0.7s;
+    }
+  }
+  &__options {
+    display: flex;
+    align-items: center;
+    border: 2px solid rgb(255, 230, 230);
+    border-radius: 20px;
+    padding: 1em;
+    flex-direction: column;
+  }
+  &__option {
+    padding: 1em;
+  }
+}

@@ -1,0 +1,82 @@
+.form {
+  border: 2px solid rgb(255, 230, 230);
+  border-radius: 20px;
+  min-width: min-content;
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  &__register,&__login {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    gap: 20px;
+    padding: 1.5em;
+    border-bottom: 2px solid rgb(255, 230, 230);
+  }
+  &__input {
+    min-width: min-content;
+    border: none;
+    outline: 2px solid transparent;
+    color: black;
+    padding: 0.5em 2em 0.5em 0.5em;
+  }
+  &__available {
+    min-width: min-content;
+    border: none;
+    color: black;
+    padding: 0.5em 2em 0.5em 0.5em;
+    outline: 3px solid rgb(0, 240, 192);;
+    transition: .7s;
+  }
+  &__unavailable {
+    min-width: min-content;
+    border: none;
+    color: black;
+    padding: 0.5em 2em 0.5em 0.5em;
+    outline: 3px solid rgb(183, 21, 21);
+    transition: .7s;
+  }
+  &__submit {
+    align-self: center;
+    margin: 1.5em;
+    padding: 1em;
+    background: rgb(255, 230, 230);
+    outline: none;
+    border: none;
+    color: black;
+    border-radius: 20px;
+    opacity: 1;
+    transition: .7s;
+    &--disabled {
+      align-self: center;
+      margin: 1.5em;
+      padding: 1em;
+      background: rgb(255, 230, 230);
+      outline: none;
+      border: none;
+      color: black;
+      border-radius: 20px;
+      opacity: 0.5;
+      cursor: not-allowed;
+      pointer-events: none;
+      transition: .7s;
+    }
+  }
+}
+
+.checked-hide {
+  position: absolute;
+  right: 35px;
+  opacity: 0;
+  visibility: hidden;
+  transition: .7s;
+}
+
+.checked-visible {
+  position: absolute;
+  right: 35px;
+  opacity: 1;
+  visibility: visible;
+  transition: .7s;
+}
