@@ -1,4 +1,3 @@
-wallet: "0xeD91D9f6051025C7405BF360B0F39B2416b0EC24"
 
 networks:
 
