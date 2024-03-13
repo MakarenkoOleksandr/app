@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useCallback, useEffect, useState } from "react";
 import Submit from "../btn/Submit";
 import { useNavigate } from "react-router-dom";
+import SERVER from "../../config";
 
 const Confirmation = ({ email, message, btnData }) => {
   const [code, setCode] = useState("");
@@ -16,7 +17,7 @@ const Confirmation = ({ email, message, btnData }) => {
     const updateStatus = "true";
     try {
       const response = await fetch(
-        `http://localhost:4040/user/update?email=${email}&update=${updateParam}&status=${updateStatus}`,
+        `http://${SERVER}/user/update?email=${email}&update=${updateParam}&status=${updateStatus}`,
         {
           method: "POST",
         }
@@ -34,7 +35,7 @@ const Confirmation = ({ email, message, btnData }) => {
     async (email) => {
       try {
         const response = await fetch(
-          `http://localhost:4040/user/checkUser?email=${email}`,
+          `http://${SERVER}/user/checkUser?email=${email}`,
           { method: "POST" }
         );
 

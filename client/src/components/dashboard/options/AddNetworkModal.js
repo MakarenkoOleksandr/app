@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import SERVER from "../../../config";
 
 const AddNetworkModal = ({ modal, setModal, updateNetwork }) => {
   const [name, setName] = useState();
@@ -13,7 +14,7 @@ const AddNetworkModal = ({ modal, setModal, updateNetwork }) => {
 
   const addNetwork = async () => {
     try {
-      const response = await fetch(`http://localhost:4040/user/add`, {
+      const response = await fetch(`http://${SERVER}:4040/user/add`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

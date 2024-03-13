@@ -4,6 +4,7 @@ import UserBtn from "./btn/UserBtn";
 import WalletBtn from "./btn/WalletBtn";
 import AddNetworkModal from "./options/AddNetworkModal";
 import NetworkAddBtn from "./btn/NetworkAddBtn";
+import SERVER from "../../config";
 
 const Profile = ({ setState, active }) => {
   const [btnData, setBtnData] = useState("Add");
@@ -21,7 +22,7 @@ const Profile = ({ setState, active }) => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `http://localhost:4040/user/getUser?email=${userName}`,
+          `http://${SERVER}/user/getUser?email=${userName}`,
           {
             method: "GET",
           }
@@ -45,7 +46,7 @@ const Profile = ({ setState, active }) => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `http://localhost:4040/user/checkUser?email=${userName}`,
+          `http://${SERVER}/user/checkUser?email=${userName}`,
           { method: "POST" }
         );
 
@@ -78,7 +79,7 @@ const Profile = ({ setState, active }) => {
     if (btnClick === true) {
       try {
         const response = await fetch(
-          `http://localhost:4040/user/update?email=${userName}&update=metamask&status=${wallet}`,
+          `http://${SERVER}/user/update?email=${userName}&update=metamask&status=${wallet}`,
           { method: "POST" }
         );
 
@@ -99,7 +100,7 @@ const Profile = ({ setState, active }) => {
 
   const handleWalletAdd = async (userName, addParam, paramValue) => {
     try {
-      const response = await fetch(`http://localhost:4040/user/add`, {
+      const response = await fetch(`http://${SERVER}/user/add`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -123,7 +124,7 @@ const Profile = ({ setState, active }) => {
   const handleLogout = async (updateParam, updateStatus) => {
     try {
       const response = await fetch(
-        `http://localhost:4040/user/update?email=${userName}&update=${updateParam}&status=${updateStatus}`,
+        `http://${SERVER}/user/update?email=${userName}&update=${updateParam}&status=${updateStatus}`,
         { method: "POST" }
       );
 
@@ -140,7 +141,7 @@ const Profile = ({ setState, active }) => {
   const updateNetwork = async () => {
     try {
       const response = await fetch(
-        `http://localhost:4040/user/getUser?email=${userName}`,
+        `http://${SERVER}/user/getUser?email=${userName}`,
         {
           method: "GET",
         }

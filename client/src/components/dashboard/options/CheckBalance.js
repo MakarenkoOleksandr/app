@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Web3 from "web3";
+import SERVER from "../../../config";
 
 const CheckBalance = () => {
   const [balance, setBalance] = useState(null);
@@ -16,7 +17,7 @@ const CheckBalance = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `http://localhost:4040/user/getUser?email=${userName}`,
+          `http://${SERVER}/user/getUser?email=${userName}`,
           {
             method: "GET",
           }

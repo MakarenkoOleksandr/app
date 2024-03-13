@@ -4,6 +4,7 @@ import Mail from "../signin/Mail";
 import Password from "../signin/Password";
 import Submit from "../btn/Submit";
 import Confirmation from "../signin/Confirmation";
+import SERVER from "../../config";
 
 const Signin = () => {
   const [email, setEmail] = useState("");
@@ -19,7 +20,7 @@ const Signin = () => {
 
   const sendConfirmationCode = async () => {
     try {
-      await fetch("http://localhost:4040/user/confirmUser", {
+      await fetch(`http://${SERVER}/user/confirmUser`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -36,7 +37,7 @@ const Signin = () => {
 
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:4040/user/create", {
+      const response = await fetch(`http://${SERVER}/user/create`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

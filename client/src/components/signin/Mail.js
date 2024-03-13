@@ -2,6 +2,7 @@ import { faSquareCheck } from "@fortawesome/free-regular-svg-icons";
 import { faX } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useCallback, useEffect, useState } from "react";
+import SERVER from "../../config";
 
 const Mail = ({
   email,
@@ -12,17 +13,15 @@ const Mail = ({
 }) => {
   const [isInputComplete, setIsInputComplete] = useState(false);
 
+  console.log(SERVER);
   const checkUsernameAvailability = useCallback(
     async (email) => {
       try {
-        const response = await fetch(
-          `https://lemon-gorilla-slip.cyclic.app/user/checkEmail`,
-          {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ email }),
-          }
-        );
+        const response = await fetch(`http://${SERVER}/user/checkEmail`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email }),
+        });
 
         const data = await response.json();
 

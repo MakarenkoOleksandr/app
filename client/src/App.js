@@ -8,6 +8,7 @@ import Dashboard from "./components/signup/Dashboard";
 import Confirmation from "./components/signin/Confirmation";
 import { useEffect, useState } from "react";
 import MainMenu from "./components/navigation/Main-menu";
+import SERVER from "./config";
 
 const App = () => {
   const [state, setState] = useState(false);
@@ -20,7 +21,7 @@ const App = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `http://localhost:4040/user/checkUser?email=${userName}`,
+          `http://${SERVER}/user/checkUser?email=${userName}`,
           { method: "POST" }
         );
 

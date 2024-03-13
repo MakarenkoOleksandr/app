@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import { faSquareCheck } from "@fortawesome/free-regular-svg-icons";
 import { faX } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import SERVER from "../../config";
 
 const Password = ({
   password,
@@ -17,7 +18,7 @@ const Password = ({
   const checkPasswordAvailability = useCallback(
     async (password, confirmPassword) => {
       try {
-        const response = await fetch(`http://localhost:4040/user/checkPass`, {
+        const response = await fetch(`http://${SERVER}/user/checkPass`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ password, confirmPassword }),
