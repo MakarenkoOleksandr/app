@@ -15,11 +15,14 @@ const Mail = ({
   const checkUsernameAvailability = useCallback(
     async (email) => {
       try {
-        const response = await fetch(`http://localhost:4040/user/checkEmail`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ email }),
-        });
+        const response = await fetch(
+          `https://lemon-gorilla-slip.cyclic.app/user/checkEmail`,
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ email }),
+          }
+        );
 
         const data = await response.json();
 
