@@ -13,7 +13,7 @@ const Login = ({ user, setState }) => {
     const updateStatus = "true";
 
     try {
-      const response = await fetch(`${SERVER}user/checkUser?email=${email}`, {
+      const response = await fetch(`${SERVER}/user/checkUser?email=${email}`, {
         method: "POST",
       });
 
