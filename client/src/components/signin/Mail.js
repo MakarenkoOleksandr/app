@@ -13,7 +13,6 @@ const Mail = ({
 }) => {
   const [isInputComplete, setIsInputComplete] = useState(false);
 
-  console.log(SERVER);
   const checkUsernameAvailability = useCallback(
     async (email) => {
       try {

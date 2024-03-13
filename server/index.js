@@ -2,11 +2,12 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const cors = require("cors");
-const path = require('path');
+const path = require("path");
 
 require("dotenv").config();
 const PORT = process.env.PORT;
 const URI = process.env.MONGODB_URI;
+const SERVER = process.env.SERVER;
 
 const USER_ROUTE = "/user";
 const userRoute = require("./routes/user");
@@ -25,13 +26,11 @@ mongoose.set("debug", true);
 app.use(cors());
 app.use(express.json());
 app.use(USER_ROUTE, userRoute);
-app.listen(PORT, () => {});
-
-
+app.listen(PORT, SERVER, () => {});
 
 app.use(express.static(__dirname));
-app.use(express.static(path.join(__dirname, '../client/build')));
+app.use(express.static(path.join(__dirname, "../client/build")));
 
-app.get('/*', function (req, res) {
-  res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
+app.get("/*", function (req, res) {
+  res.sendFile(path.join(__dirname, "../client/build", "index.html"));
 });
