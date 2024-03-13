@@ -14,7 +14,7 @@ const AddNetworkModal = ({ modal, setModal, updateNetwork }) => {
 
   const addNetwork = async () => {
     try {
-      const response = await fetch(`http://${SERVER}:4040/user/add`, {
+      const response = await fetch(`${SERVER}:4040/user/add`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

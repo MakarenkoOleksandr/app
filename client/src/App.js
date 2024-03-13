@@ -21,7 +21,7 @@ const App = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `http://${SERVER}/user/checkUser?email=${userName}`,
+          `${SERVER}/user/checkUser?email=${userName}`,
           { method: "POST" }
         );
 

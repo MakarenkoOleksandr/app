@@ -20,7 +20,7 @@ const Signin = () => {
 
   const sendConfirmationCode = async () => {
     try {
-      await fetch(`http://${SERVER}/user/confirmUser`, {
+      await fetch(`${SERVER}/user/confirmUser`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -37,7 +37,7 @@ const Signin = () => {
 
     e.preventDefault();
     try {
-      const response = await fetch(`http://${SERVER}/user/create`, {
+      const response = await fetch(`${SERVER}/user/create`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -17,7 +17,7 @@ const CheckBalance = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `http://${SERVER}/user/getUser?email=${userName}`,
+          `${SERVER}/user/getUser?email=${userName}`,
           {
             method: "GET",
           }

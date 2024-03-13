@@ -1,3 +1,3 @@
-const SERVER = "lemon-gorilla-slip.cyclic.app";
+const SERVER = "https://lemon-gorilla-slip.cyclic.app";
 
 export default SERVER;

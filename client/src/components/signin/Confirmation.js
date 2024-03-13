@@ -17,7 +17,7 @@ const Confirmation = ({ email, message, btnData }) => {
     const updateStatus = "true";
     try {
       const response = await fetch(
-        `http://${SERVER}/user/update?email=${email}&update=${updateParam}&status=${updateStatus}`,
+        `${SERVER}/user/update?email=${email}&update=${updateParam}&status=${updateStatus}`,
         {
           method: "POST",
         }
@@ -35,7 +35,7 @@ const Confirmation = ({ email, message, btnData }) => {
     async (email) => {
       try {
         const response = await fetch(
-          `http://${SERVER}/user/checkUser?email=${email}`,
+          `${SERVER}/user/checkUser?email=${email}`,
           { method: "POST" }
         );
 

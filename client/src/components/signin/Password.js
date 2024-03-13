@@ -18,7 +18,7 @@ const Password = ({
   const checkPasswordAvailability = useCallback(
     async (password, confirmPassword) => {
       try {
-        const response = await fetch(`http://${SERVER}/user/checkPass`, {
+        const response = await fetch(`${SERVER}/user/checkPass`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ password, confirmPassword }),

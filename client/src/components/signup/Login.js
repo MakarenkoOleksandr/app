@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Submit from "../btn/Submit";
+import SERVER from "../../config";
 
 const Login = ({ user, setState }) => {
   const [email, setEmail] = useState(user);
@@ -12,17 +13,16 @@ const Login = ({ user, setState }) => {
     const updateStatus = "true";
 
     try {
-      const response = await fetch(
-        `http://localhost:4040/user/checkUser?email=${email}`,
-        { method: "POST" }
-      );
+      const response = await fetch(`${SERVER}user/checkUser?email=${email}`, {
+        method: "POST",
+      });
 
       const data = await response.json();
       if (data.ok) {
         if (password === data.data.password) {
           setMessage("Login successfully");
           await fetch(
-            `http://localhost:4040/user/update?email=${email}&update=${updateParam}&status=${updateStatus}`,
+            `${SERVER}/user/update?email=${email}&update=${updateParam}&status=${updateStatus}`,
             { method: "POST" }
           );
 

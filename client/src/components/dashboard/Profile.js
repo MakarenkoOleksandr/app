@@ -140,12 +140,9 @@ const Profile = ({ setState, active }) => {
 
   const updateNetwork = async () => {
     try {
-      const response = await fetch(
-        `http://${SERVER}/user/getUser?email=${userName}`,
-        {
-          method: "GET",
-        }
-      );
+      const response = await fetch(`${SERVER}/user/getUser?email=${userName}`, {
+        method: "GET",
+      });
 
       const data = await response.json();
 

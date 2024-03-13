@@ -16,7 +16,7 @@ const Mail = ({
   const checkUsernameAvailability = useCallback(
     async (email) => {
       try {
-        const response = await fetch(`http://${SERVER}/user/checkEmail`, {
+        const response = await fetch(`${SERVER}/user/checkEmail`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ email }),
