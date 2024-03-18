@@ -22,7 +22,7 @@ const Profile = ({ setState, active }) => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `http://${SERVER}/user/getUser?email=${userName}`,
+          `${SERVER}/user/getUser?email=${userName}`,
           {
             method: "GET",
           }
@@ -40,13 +40,13 @@ const Profile = ({ setState, active }) => {
     };
 
     fetchData();
-  }, []);
+  }, [userName]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `http://${SERVER}/user/checkUser?email=${userName}`,
+          `${SERVER}/user/checkUser?email=${userName}`,
           { method: "POST" }
         );
 
@@ -79,7 +79,7 @@ const Profile = ({ setState, active }) => {
     if (btnClick === true) {
       try {
         const response = await fetch(
-          `http://${SERVER}/user/update?email=${userName}&update=metamask&status=${wallet}`,
+          `${SERVER}/user/update?email=${userName}&update=metamask&status=${wallet}`,
           { method: "POST" }
         );
 
@@ -100,7 +100,7 @@ const Profile = ({ setState, active }) => {
 
   const handleWalletAdd = async (userName, addParam, paramValue) => {
     try {
-      const response = await fetch(`http://${SERVER}/user/add`, {
+      const response = await fetch(`${SERVER}/user/add`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -124,7 +124,7 @@ const Profile = ({ setState, active }) => {
   const handleLogout = async (updateParam, updateStatus) => {
     try {
       const response = await fetch(
-        `http://${SERVER}/user/update?email=${userName}&update=${updateParam}&status=${updateStatus}`,
+        `${SERVER}/user/update?email=${userName}&update=${updateParam}&status=${updateStatus}`,
         { method: "POST" }
       );
 

@@ -1,3 +1,5 @@
+@use "../common/" as *;
+
 .header {
   max-height: 100px;
   position: absolute;
@@ -45,6 +47,10 @@
       display: flex;
       align-items: center;
       gap: 20px;
+      @include sm {
+        flex-direction: column;
+        gap: 50px;
+      }
     }
     &-action {
     }

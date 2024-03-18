@@ -15,6 +15,7 @@ const Login = ({ user, setState }) => {
     try {
       const response = await fetch(`${SERVER}/user/checkUser?email=${email}`, {
         method: "POST",
+        headers: { "Content-Type": "application/json" },
       });
 
       const data = await response.json();

@@ -5,7 +5,7 @@ import Options from "../dashboard/Options";
 import { Route, Routes } from "react-router-dom";
 
 const Dashboard = ({ setState }) => {
-  const [active, setActive] = useState("");
+  const [active, setActive] = useState("/profile");
   const [animation, setAnimation] = useState(false);
 
   const handleClick = (link) => {

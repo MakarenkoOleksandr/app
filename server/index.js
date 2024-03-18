@@ -23,6 +23,14 @@ const userRoute = require("./routes/user");
 mongoose.set("debug", true);
 
 app.use(cors());
+app.use((req, res, next) => {
+  res.setHeader(
+    "Access-Control-Allow-Methods",
+    "GET, POST, PUT, PATCH, DELETE"
+  );
+  next();
+});
+
 app.use(express.json());
 app.use(USER_ROUTE, userRoute);
 app.listen(PORT, () => {});
