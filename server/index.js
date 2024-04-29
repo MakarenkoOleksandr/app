@@ -7,7 +7,6 @@ const path = require("path");
 require("dotenv").config();
 const PORT = process.env.PORT || 3000;
 const URI = process.env.MONGODB_URI;
-
 const USER_ROUTE = "/user";
 const userRoute = require("./routes/user");
 
@@ -32,12 +31,13 @@ app.use((req, res, next) => {
 
 app.use(express.json());
 app.use(USER_ROUTE, userRoute);
-con().then(() => {
-  app.listen(PORT, () => {});
-});
 
 app.use(express.static(__dirname));
 app.use(express.static(path.join(__dirname, "../client/build")));
 app.get("/*", function (req, res) {
   res.sendFile(path.join(__dirname, "../client/build", "index.html"));
+});
+
+con().then(() => {
+  app.listen(PORT, () => {});
 });
