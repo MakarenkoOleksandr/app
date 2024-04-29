@@ -5,21 +5,20 @@ const cors = require("cors");
 const path = require("path");
 
 require("dotenv").config();
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 3000;
 const URI = process.env.MONGODB_URI;
 
 const USER_ROUTE = "/user";
 const userRoute = require("./routes/user");
 
-(async function connecting() {
+const con = async () => {
   try {
     await mongoose.connect(URI);
     console.log("Connected to the DB");
   } catch (error) {
     console.log("ERROR: DB is not running");
   }
-})();
-
+};
 mongoose.set("debug", true);
 
 app.use(cors());
@@ -33,7 +32,9 @@ app.use((req, res, next) => {
 
 app.use(express.json());
 app.use(USER_ROUTE, userRoute);
-app.listen(PORT, () => {});
+con().then(() => {
+  app.listen(PORT, () => {});
+});
 
 app.use(express.static(__dirname));
 app.use(express.static(path.join(__dirname, "../client/build")));
