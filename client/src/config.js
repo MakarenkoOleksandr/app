@@ -3,4 +3,5 @@ const SERVER =
     ? "http://localhost:4040"
     : "https://lemon-gorilla-slip.cyclic.app";
 
+
 export default SERVER;

@@ -11,11 +11,6 @@ const MainMenu = ({ state }) => {
           </NavLink>
         </div>
         <ul className="header__menu-actions">
-          <li className="header__menu-action">
-            <NavLink to="/about" className="header__menu-link">
-              About
-            </NavLink>
-          </li>
           {state === false && (
             <>
               <li className="header__menu-action">

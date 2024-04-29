@@ -63,6 +63,7 @@ const Signin = () => {
 
   return (
     <main className="main">
+      {message && <p className="main__form-message">{message}</p>}
       {registrationStep === 1 && (
         <form className="main__form form" onSubmit={register}>
           <Mail
